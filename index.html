@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flightly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/> 
+
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://kit.fontawesome.com/a076d05399.js"  crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Flightly Logo"> <!-- Replace with your logo file name -->
+                </a>
+
+                <!-- Navbar Toggle (for mobile) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links and Button -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Destination</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Deals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">How it Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                   <div class="auth-buttons d-flex align-items-center">
+                   <a href="#" class="signin-text me-3">SIGN IN</a>
+                   <a href="#" class="signup-btn">Sign Up</a>
+                   </div>
+
+                    
+                </div>
+
+            </div>
+        </nav>
+        
+    </header>
+
+
+    <!-- HERO SECTION------------------------------------------------------- -->
+     <section class="hero-section">
+  <div class="hero-overlay">
+    <div class="container">
+      <div class="row align-items-center">
+      <!-- Left side-Title -->
+       <div class="col-lg-6">
+      <h1 class="hero-title">YOUR JOURNEY<br>BEGINS HERE...</h1>
+    </div>
+
+    <!-- right side -->
+   <div class="booking-card">
+    <h1 class="main-title">Find your ticket Now</h1>
+    
+    <form id="bookingForm">
+      <!-- From Location -->
+      <div class="form-group">
+        <i class="fas fa-plane-departure form-icon"></i>
+        <select class="form-select" id="fromLocation">
+          <option value="Germany">Germany</option>
+          <option value="India">India</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Dubai">Dubai</option>
+          <option value="Australia">Australia</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+        </select>
+      </div>
+
+      <!-- To Location -->
+      <div class="form-group">
+        <i class="fas fa-plane-arrival form-icon"></i>
+        <select class="form-select" id="toLocation">
+          <option value="Australia">Australia</option>
+          <option value="Germany">Germany</option>
+          <option value="India">India</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Dubai">Dubai</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+        </select>
+      </div>
+
+      <!-- Dates -->
+      <div class="form-row">
+        <div class="form-group">
+          <i class="fas fa-calendar-alt form-icon"></i>
+          <input type="date" class="form-control" id="checkInDate" placeholder="Check In">
+        </div>
+        <div class="form-group">
+          <i class="fas fa-calendar-alt form-icon"></i>
+          <input type="date" class="form-control" id="checkOutDate" placeholder="Check Out">
+        </div>
+      </div>
+
+      <!-- Class and Travelers -->
+      <div class="form-row">
+        <div class="form-group">
+          <i class="fas fa-star form-icon"></i>
+          <select class="form-select" id="flightClass">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="First Class">First Class</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-users form-icon"></i>
+          <select class="form-select" id="travelers">
+            <option value="01">01</option>
+            <option value="02" selected>02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Trip Type -->
+      <div class="radio-group">
+        <div class="radio-item">
+          <input type="radio" name="tripType" id="oneWay" value="ONE WAY">
+          <label for="oneWay">ONE WAY</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="tripType" id="roundTrip" value="ROUND TRIP" checked>
+          <label for="roundTrip">ROUND TRIP</label>
+        </div>
+      </div>
+
+      <!-- Ticket Summary -->
+      <div class="ticket-summary">
+        <div class="ticket-header">
+          <h3 class="ticket-title">TICKET SUMMARY</h3>
+          <div class="trip-type-badge" id="tripTypeBadge">ROUND TRIP</div>
+        </div>
+        
+        <div class="flight-route">
+          <div class="airport" id="summaryFrom">Germany</div>
+          <div class="flight-line">
+            <i class="fas fa-plane plane-icon"></i>
+          </div>
+          <div class="airport" id="summaryTo">Australia</div>
+        </div>
+
+        <div class="ticket-details">
+          <div class="detail-item">
+            <span class="detail-label">Check In</span>
+            <span class="detail-value" id="summaryCheckIn">01 JUN 2023</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Class</span>
+            <span class="detail-value" id="summaryClass">ECONOMY</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Check Out</span>
+            <span class="detail-value" id="summaryCheckOut">10 JUN 2023</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Travelers</span>
+            <span class="detail-value" id="summaryTravelers">02</span>
+          </div>
+        </div>
+
+        <div class="barcode"></div>
+      </div>
+
+      <button type="submit" class="book-button">Book Now</button>
+    </form>
+  </div>
+    </div>
+  </div>
+ 
+</section>
+
+
+
+<!-- Explore Section -->
+<section class="explore-section py-5">
+  <div class="container text-center">
+    <h2 class="explore-heading">Explore the <strong>world</strong></h2>
+    <p class="explore-subtext">
+      Discover breathtaking destinations and unforgettable experiences across the globe.
+      Your next journey awaits, filled with endless possibilities!
+    </p>
+     <!-- Background Circles -->
+    <div class="bg-circle bg-circle-blue"></div>
+    <div class="bg-circle bg-circle-orange"></div>
+    <div class="bg-circle bg-circle-yellow"></div>
+
+    <div class="destination-wrapper mt-4">
+      <div class="row g-0">
+        <!-- Asia -->
+        <div class="col-md-3 col-12">
+          <div class="destination-block" style="background-image: url('asia.png');">
+            <div class="destination-label">
+              <h5>Asia</h5>
+              <p>Starting From $2000</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Singapore -->
+        <div class="col-md-3 col-12">
+          <div class="destination-block" style="background-image: url('singapore.png');">
+            <div class="destination-label">
+              <h5>Singapore</h5>
+              <p>Starting From $3000</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Germany -->
+        <div class="col-md-3 col-12">
+          <div class="destination-block" style="background-image: url('germany.png');">
+            <div class="destination-label">
+              <h5>Germany</h5>
+              <p>Starting From $2500</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dubai -->
+        <div class="col-md-3 col-12">
+          <div class="destination-block" style="background-image: url('dubai.png');">
+            <div class="destination-label">
+              <h5>Dubai</h5>
+              <p>Starting From $1500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Plan Your Travel Section -->
+<section class="plan-travel-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <h2 class="plan-heading">Plan your travel with <strong>confidence</strong></h2>
+        <p class="plan-subtext">
+          Get assistance with your bookings and travel plans, and explore what to expect every step of your journey.
+        </p>
+        
+        <div class="travel-steps">
+          <!-- Step 01 -->
+          <div class="step-item">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h4>Travel requirement for Dubai</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            </div>
+          </div>
+          
+          <!-- Step 02 -->
+          <div class="step-item">
+            <div class="step-number step-02">02</div>
+            <div class="step-content">
+              <h4>Multi-risk travel insurance</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            </div>
+          </div>
+          
+          <!-- Step 03 -->
+          <div class="step-item">
+            <div class="step-number step-03">03</div>
+            <div class="step-content">
+              <h4>Travel requirements by destinations</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Visual -->
+      <div class="col-lg-6">
+        <div class="travel-visual">
+          <div class="visual-circles">
+            <!-- Large circle with airplane window view -->
+            <div class="circle-large">
+              <img src="pink-plane.png" />
+            </div>
+            
+            <!-- Medium circle with airplane in sky -->
+            <div class="circle-medium">
+              <img src="window-plane.png" alt="Airplane in sky" />
+            </div>
+            
+            <!-- Small circle with airplane wing -->
+            <div class="circle-small">
+              <img src="sky-plane.png" alt="Airplane wing" />
+            </div>
+          </div>
+          
+          <!-- Floating price tag -->
+          <div class="price-tag">
+            <span class="price-number">1640</span>
+            <span class="price-currency">$308.19</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Curved Background -->
+  <div class="curved-background"></div>
+</section>
+
+
+<section class="py-5" style="background-color: #f8f9fa;">
+  <div class="container text-center">
+    <h2 class="fw-semibold">Why <strong>choose</strong> us?</h2>
+    <p class="mb-5 text-muted">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's<br>
+      standard dummy text ever since the 1500s.
+    </p>
+
+    <div class="row justify-content-center">
+      <!-- Box 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="bg-primary text-white rounded-circle d-flex flex-column align-items-center justify-content-center mx-auto" style="width: 220px; height: 300px;">
+          <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <i class="bi bi-calendar-event fs-4"></i>
+          </div>
+          <h5 class="fw-semibold">Book & Relax</h5>
+          <p class="px-3 mt-2" style="font-size: 14px;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="bg-warning text-white rounded-circle d-flex flex-column align-items-center justify-content-center mx-auto" style="width: 220px; height: 300px;">
+          <div class="bg-white text-warning rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <i class="bi bi-check2-square fs-4"></i>
+          </div>
+          <h5 class="fw-semibold">Smart Checklist</h5>
+          <p class="px-3 mt-2" style="font-size: 14px;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="bg-orange text-white rounded-circle d-flex flex-column align-items-center justify-content-center mx-auto" style="width: 220px; height: 300px; background-color: #fbbf77;">
+          <div class="bg-white text-orange rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <i class="bi bi-check-circle fs-4"></i>
+          </div>
+          <h5 class="fw-semibold">Save More</h5>
+          <p class="px-3 mt-2" style="font-size: 14px;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Airlines Section -->
+<section class="airlines-section py-5">
+   
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="text-center mb-5">
+            <h2 class="section-title fw-normal mb-3">Find Best <strong class="fw-bold">Airlines</strong></h2>
+            <p class="text-muted mx-auto" style="max-width: 600px; line-height: 1.6;">
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+            </p>
+        </div>
+
+        <!-- Airlines Grid -->
+        <div class="row g-0">
+            <!-- First Row -->
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 1 Logo">
+               
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 2 Logo">
+                
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 3 Logo">
+              
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 4 Logo">
+                
+            </div>
+
+            <!-- Second Row -->
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 5 Logo">
+               
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 6 Logo">
+               
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 7 Logo">
+                
+            </div>
+            <div class="col-6 col-md-3 airline-item">
+                <img src="bisman-logo.png" class="airline-logo img-fluid" alt="Airline 8 Logo">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Top Spots Section -->
+
+ <!-- Top Spots Section -->
+    <section class="top-spots-section">
+        <div class="container text-center">
+            <!-- Title -->
+            <h2 class="section-title">Top <strong>spots</strong> checkouts</h2>
+            
+            <!-- Subtitle -->
+            <p class="section-subtitle">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+            </p>
+            
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div class="image-row">
+                    <!-- Image 1 - Ocean View -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ocean View">
+                    </div>
+                    
+                    <!-- Image 2 - City Night -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="City Night">
+                    </div>
+                    
+                   
+                    <!-- Image 4 - Palm Trees -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Trees">
+                    </div>
+                    
+                    <!-- Image 5 - European Street -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="European Street">
+                    </div>
+                    
+                    <!-- Image 6 - Mountain Path -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Path">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+     <!-- Client Reviews Section -->
+  <section class="client-section">
+    <div class="container-fluid">
+      <h2>What our <span class="bold-text">clients</span> say?</h2>
+      <p class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+      <!-- Testimonial Container -->
+      <div class="testimonial-container">
+
+        <!-- Navigation Buttons -->
+        <button class="nav-button nav-button-left" onclick="previousTestimonial()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-button nav-button-right" onclick="nextTestimonial()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Testimonial Card -->
+        <div class="testimonial-card">
+          <!-- Quote Icon -->
+          <img src="double-quotes.png" alt="Quote" class="quote-icon">
+
+          <!-- Testimonial Content -->
+          <p class="testimonial-quote">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset......
+          </p>
+
+          <!-- Author Section -->
+          <div class="author-section">
+            <div class="testimonial-author">Arlene McCoy</div>
+            <div class="testimonial-location">Germany</div>
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Arlene McCoy" class="author-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Newsletter section -->
+<section class="subscribe-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Column: Images -->
+      <div class="col-md-6">
+        <div class="image-container">
+          <!-- Family Image -->
+          <img src="car-family.jpg" alt="Family Image" class="img-fluid">
+          <!-- Group Image -->
+          <img src="fam4.jpg" alt="Group Image" class="img-fluid">
+        </div>
+      </div>
+
+      <!-- Right Column: Newsletter Form -->
+      <div class="col-md-6">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.....
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Input your email address in here" class="newsletter-input">
+          <button type="submit" class="newsletter-button"><i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+
+<footer class="footer w-100">
+  <div class="container-fluid px-lg-5 py-5" style="background-color: #f2f5f8;">
+    <div class="row gx-5 gy-4 align-items-start">
+      
+      <!-- Logo and Description -->
+      <div class="col-md-3">
+        <img src="logo.png" alt="Flightly Logo" style="height: 25px; margin-bottom: 20px;">
+        <p class="text-muted mb-3">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...
+        </p>
+        <div class="d-flex gap-3 fs-5">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div class="col-md-3">
+        <h5 class="footer-heading fw-bold mb-3">Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-dark text-decoration-none d-block mb-2">Online Store</a></li>
+          <li><a href="#" class="text-dark text-decoration-none d-block mb-2">Terms and Conditions</a></li>
+          <li><a href="#" class="text-dark text-decoration-none d-block mb-2">Privacy Policy</a></li>
+          <li><a href="#" class="text-dark text-decoration-none d-block mb-2">Contact Us</a></li>
+          <li><a href="#" class="text-dark text-decoration-none d-block">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Working Hours -->
+      <div class="col-md-3">
+        <h5 class="footer-heading fw-bold mb-3">Working Hours</h5>
+        <p class="mb-2">Monday–Friday:<br><span class="text-dark">07:00 – 21:00</span></p>
+        <p class="mb-2">Saturday:<br><span class="text-dark">07:00 – 16:00</span></p>
+        <p>Sunday Closed</p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h5 class="footer-heading fw-bold mb-3">CONTACT INFO</h5>
+        <p class="mb-2"><strong>Address:</strong><br>Budapest Hungry, 1054</p>
+        <p><strong>Email:</strong><br>Info@flightly.com</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom text-white text-center py-2" style="background-color: #000;">
+    &copy; 2024 flightly. All rights reserved
+  </div>
+</footer>
+
+
+
+  <script>
+    function formatDate(dateString) {
+      if (!dateString) return '';
+      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      const date = new Date(dateString);
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = months[date.getMonth()];
+      const year = date.getFullYear();
+      return `${day} ${month} ${year}`;
+    }
+
+    function updateSummary() {
+      // Update locations
+      document.getElementById('summaryFrom').textContent = document.getElementById('fromLocation').value;
+      document.getElementById('summaryTo').textContent = document.getElementById('toLocation').value;
+      
+      // Update dates
+      const checkIn = document.getElementById('checkInDate').value;
+      const checkOut = document.getElementById('checkOutDate').value;
+      document.getElementById('summaryCheckIn').textContent = formatDate(checkIn) || '01 JUN 2023';
+      document.getElementById('summaryCheckOut').textContent = formatDate(checkOut) || '10 JUN 2023';
+      
+      // Update class and travelers
+      document.getElementById('summaryClass').textContent = document.getElementById('flightClass').value.toUpperCase();
+      document.getElementById('summaryTravelers').textContent = document.getElementById('travelers').value;
+      
+      // Update trip type badge
+      const selectedTripType = document.querySelector('input[name="tripType"]:checked').value;
+      document.getElementById('tripTypeBadge').textContent = selectedTripType;
+    }
+
+    // Add event listeners
+    document.querySelectorAll('select, input[type="date"], input[type="radio"]').forEach(element => {
+      element.addEventListener('change', updateSummary);
+    });
+
+    // Set initial dates
+    const today = new Date();
+    const nextWeek = new Date();
+    nextWeek.setDate(today.getDate() + 7);
+    const returnDate = new Date();
+    returnDate.setDate(today.getDate() + 14);
+
+    document.getElementById('checkInDate').value = nextWeek.toISOString().split('T')[0];
+    document.getElementById('checkOutDate').value = returnDate.toISOString().split('T')[0];
+
+    // Form submission
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Booking request submitted! Redirecting to payment...');
+    });
+
+    // Initial update
+    updateSummary();
+   
+    // Testimonial data
+    const testimonials = [
+      
+        
+      {
+        quote: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched. They delivered beyond our expectations and helped transform our business.",
+        author: "John Smith",
+        location: "United States",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+      },
+      {
+        quote: "Exceptional service and outstanding results. The team was professional, responsive, and delivered exactly what we needed. I would highly recommend them to anyone looking for quality work.",
+        author: "Sarah Johnson",
+        location: "Canada",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+      }
+    ];
+
+    let currentTestimonial = 0;
+
+    function updateTestimonial() {
+      const testimonial = testimonials[currentTestimonial];
+      document.querySelector('.testimonial-quote').textContent = testimonial.quote;
+      document.querySelector('.testimonial-author').textContent = testimonial.author;
+      document.querySelector('.testimonial-location').textContent = testimonial.location;
+      document.querySelector('.author-image').src = testimonial.image;
+      document.querySelector('.author-image').alt = testimonial.author;
+    }
+
+    function nextTestimonial() {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      updateTestimonial();
+    }
+
+    function previousTestimonial() {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial();
+    }
+
+    // Auto-rotate testimonials every 5 seconds
+    setInterval(nextTestimonial, 5000);
+
+    // Initialize the first testimonial
+    updateTestimonial();
+
+  <!-- Bootstrap JS and Font Awesome (for arrow icon) -->
+  
+
+
+
+    </script>
+</body>
+</html>
